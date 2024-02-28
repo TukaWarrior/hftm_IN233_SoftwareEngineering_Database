@@ -33,15 +33,16 @@
             textBox1 = new TextBox();
             button2 = new Button();
             groupBox1 = new GroupBox();
-            label4 = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            txt_name = new TextBox();
-            txt_vorname = new TextBox();
-            txt_geburtsdatum = new TextBox();
-            txt_heimatort = new TextBox();
             button3 = new Button();
+            txt_heimatort = new TextBox();
+            txt_geburtsdatum = new TextBox();
+            txt_vorname = new TextBox();
+            txt_name = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            label4 = new Label();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -101,33 +102,44 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Add Person";
             // 
-            // label4
+            // button3
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 32);
-            label4.Name = "label4";
-            label4.Size = new Size(39, 15);
-            label4.TabIndex = 0;
-            label4.Text = "Name";
+            button3.Location = new Point(76, 176);
+            button3.Name = "button3";
+            button3.Size = new Size(103, 23);
+            button3.TabIndex = 8;
+            button3.Text = "Add Person";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
-            // label1
+            // txt_heimatort
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 66);
-            label1.Name = "label1";
-            label1.Size = new Size(54, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Vorname";
-            label1.Click += label1_Click;
+            txt_heimatort.Location = new Point(92, 128);
+            txt_heimatort.Name = "txt_heimatort";
+            txt_heimatort.Size = new Size(146, 23);
+            txt_heimatort.TabIndex = 7;
             // 
-            // label2
+            // txt_geburtsdatum
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 101);
-            label2.Name = "label2";
-            label2.Size = new Size(83, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Geburtsdatum";
+            txt_geburtsdatum.Location = new Point(92, 101);
+            txt_geburtsdatum.Name = "txt_geburtsdatum";
+            txt_geburtsdatum.Size = new Size(146, 23);
+            txt_geburtsdatum.TabIndex = 6;
+            txt_geburtsdatum.TextChanged += textBox4_TextChanged;
+            // 
+            // txt_vorname
+            // 
+            txt_vorname.Location = new Point(92, 63);
+            txt_vorname.Name = "txt_vorname";
+            txt_vorname.Size = new Size(146, 23);
+            txt_vorname.TabIndex = 5;
+            // 
+            // txt_name
+            // 
+            txt_name.Location = new Point(92, 29);
+            txt_name.Name = "txt_name";
+            txt_name.Size = new Size(146, 23);
+            txt_name.TabIndex = 4;
             // 
             // label3
             // 
@@ -139,50 +151,50 @@
             label3.Text = "Heimatort";
             label3.Click += label3_Click;
             // 
-            // txt_name
+            // label2
             // 
-            txt_name.Location = new Point(92, 29);
-            txt_name.Name = "txt_name";
-            txt_name.Size = new Size(146, 23);
-            txt_name.TabIndex = 4;
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 101);
+            label2.Name = "label2";
+            label2.Size = new Size(83, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Geburtsdatum";
             // 
-            // txt_vorname
+            // label1
             // 
-            txt_vorname.Location = new Point(92, 63);
-            txt_vorname.Name = "txt_vorname";
-            txt_vorname.Size = new Size(146, 23);
-            txt_vorname.TabIndex = 5;
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 66);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Vorname";
+            label1.Click += label1_Click;
             // 
-            // txt_geburtsdatum
+            // label4
             // 
-            txt_geburtsdatum.Location = new Point(92, 101);
-            txt_geburtsdatum.Name = "txt_geburtsdatum";
-            txt_geburtsdatum.Size = new Size(146, 23);
-            txt_geburtsdatum.TabIndex = 6;
-            txt_geburtsdatum.TextChanged += textBox4_TextChanged;
+            label4.AutoSize = true;
+            label4.Location = new Point(6, 32);
+            label4.Name = "label4";
+            label4.Size = new Size(39, 15);
+            label4.TabIndex = 0;
+            label4.Text = "Name";
             // 
-            // txt_heimatort
+            // button4
             // 
-            txt_heimatort.Location = new Point(92, 128);
-            txt_heimatort.Name = "txt_heimatort";
-            txt_heimatort.Size = new Size(146, 23);
-            txt_heimatort.TabIndex = 7;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(76, 176);
-            button3.Name = "button3";
-            button3.Size = new Size(103, 23);
-            button3.TabIndex = 8;
-            button3.Text = "Add Person";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            button4.Location = new Point(991, 12);
+            button4.Name = "button4";
+            button4.Size = new Size(115, 23);
+            button4.TabIndex = 5;
+            button4.Text = "Delete Person";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1118, 600);
+            Controls.Add(button4);
             Controls.Add(groupBox1);
             Controls.Add(button2);
             Controls.Add(textBox1);
@@ -214,5 +226,6 @@
         private TextBox txt_heimatort;
         private TextBox txt_geburtsdatum;
         private Button button3;
+        private Button button4;
     }
 }

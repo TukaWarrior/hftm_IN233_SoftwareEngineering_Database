@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace FunctionPoint
 {
     public partial class Form1 : Form
@@ -10,6 +12,10 @@ namespace FunctionPoint
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridView dataGridView = (DataGridView)sender;
+
+            // get the row number clicked
+            int rowClicked = dataGridView.CurrentRow.Index;
 
         }
 
@@ -65,7 +71,35 @@ namespace FunctionPoint
 
             PersonDataAcess personDA = new PersonDataAcess();
             int result = personDA.addOnePerson(person);
-            MessageBox.Show(result + "New rows inserted");
+
+
+            List<Person> persons = personDA.GetAllPersons();
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = persons;
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            int rowClicked = dataGridView1.CurrentRow.Index;
+         
+
+            int personID = (int) dataGridView1.Rows[rowClicked].Cells[0].Value;
+          
+
+            PersonDataAcess PersonDA = new PersonDataAcess();
+
+            int result = PersonDA.deletePerson(personID);
+
+            
+            List<Person> persons = PersonDA.GetAllPersons();
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = persons;
+
+
         }
     }
 }

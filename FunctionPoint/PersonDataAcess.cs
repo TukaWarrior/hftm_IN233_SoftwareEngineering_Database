@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.Compiler;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -105,6 +106,26 @@ namespace FunctionPoint
 
 
             return newRows;
+        }
+
+        internal int deletePerson(int personID)
+        {
+            //connect to the mysql server
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+
+            //define the sql statement to fetch all persons
+            MySqlCommand command = new MySqlCommand("DELETE FROM `person` WHERE `person`.`PersonID` = @personID;", connection);
+            command.Parameters.AddWithValue("@personID", personID);
+            
+
+            int result = command.ExecuteNonQuery();
+            connection.Close();
+
+
+            return result;
         }
     }
 
